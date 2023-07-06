@@ -1,4 +1,4 @@
-# HSH-Plus
+# HSH Plus
 Makes Home Sheep Home a lot better
 
 ## Current Features
