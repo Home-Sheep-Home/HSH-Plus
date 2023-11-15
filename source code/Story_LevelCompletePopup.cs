@@ -8,13 +8,13 @@ using UnityEngine.UI;
 // Token: 0x02000159 RID: 345
 public class Story_LevelCompletePopup : AppScreen
 {
-	// Token: 0x0600083C RID: 2108 RVA: 0x00007C5C File Offset: 0x00005E5C
+	// Token: 0x06000835 RID: 2101 RVA: 0x00007B6E File Offset: 0x00005D6E
 	private void Start()
 	{
 		this.levelUI = base.GetComponentInParent<LevelUI>();
 	}
 
-	// Token: 0x0600083D RID: 2109 RVA: 0x00037128 File Offset: 0x00035328
+	// Token: 0x06000836 RID: 2102 RVA: 0x00037010 File Offset: 0x00035210
 	public override void Update()
 	{
 		base.Update();
@@ -44,7 +44,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x0600083E RID: 2110 RVA: 0x00037190 File Offset: 0x00035390
+	// Token: 0x06000837 RID: 2103 RVA: 0x00037078 File Offset: 0x00035278
 	private void UpdateShow()
 	{
 		this.timer += Time.deltaTime;
@@ -72,13 +72,13 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x0600083F RID: 2111 RVA: 0x00037278 File Offset: 0x00035478
+	// Token: 0x06000838 RID: 2104 RVA: 0x00037160 File Offset: 0x00035360
 	private void UpdateTime()
 	{
 		this.timer += Time.deltaTime;
 		float num = Mathf.Clamp01(this.timer / 1f);
 		TimeSpan timeSpan = TimeSpan.FromSeconds((double)Mathf.Lerp(0f, this.timeTaken, num));
-		string text = string.Format("{0:D2}:{1:D2}.{2:D2}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+		string text = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
 		if (text.Substring(0, 1) == "0")
 		{
 			text = text.Remove(0, 1);
@@ -111,7 +111,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x06000840 RID: 2112 RVA: 0x000373D4 File Offset: 0x000355D4
+	// Token: 0x06000839 RID: 2105 RVA: 0x000372BC File Offset: 0x000354BC
 	private void UpdateDifference()
 	{
 		this.timer += Time.deltaTime;
@@ -128,7 +128,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x06000841 RID: 2113 RVA: 0x00037460 File Offset: 0x00035660
+	// Token: 0x0600083A RID: 2106 RVA: 0x00037348 File Offset: 0x00035548
 	private void UpdateStars()
 	{
 		float num = this.timer;
@@ -194,7 +194,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x06000842 RID: 2114 RVA: 0x00037654 File Offset: 0x00035854
+	// Token: 0x0600083B RID: 2107 RVA: 0x0003753C File Offset: 0x0003573C
 	private void UpdateCollectables()
 	{
 		if (this.tweenIndex >= this.cupcakesFound + this.socksFound + this.bonusesFound || this.tweenIndex >= this.collectableImages.Length)
@@ -246,7 +246,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x06000843 RID: 2115 RVA: 0x00037884 File Offset: 0x00035A84
+	// Token: 0x0600083C RID: 2108 RVA: 0x0003776C File Offset: 0x0003596C
 	private void UpdateBonusUnlocked()
 	{
 		if (this.bonusUnlockTimer < 0f)
@@ -263,7 +263,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x06000844 RID: 2116 RVA: 0x00037900 File Offset: 0x00035B00
+	// Token: 0x0600083D RID: 2109 RVA: 0x000377E8 File Offset: 0x000359E8
 	private void LateUpdate()
 	{
 		if (this.state == Story_LevelCompletePopup.State.Collectables)
@@ -274,7 +274,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x06000845 RID: 2117 RVA: 0x0003795C File Offset: 0x00035B5C
+	// Token: 0x0600083E RID: 2110 RVA: 0x00037844 File Offset: 0x00035A44
 	public override void Enable(Action callback, bool instant = false)
 	{
 		base.Enable(callback, instant);
@@ -307,14 +307,14 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 	}
 
-	// Token: 0x06000846 RID: 2118 RVA: 0x00007C6A File Offset: 0x00005E6A
+	// Token: 0x0600083F RID: 2111 RVA: 0x00007B7C File Offset: 0x00005D7C
 	public void SetIsFinalLevelForChapter(bool finalLevel)
 	{
 		this.isFinalLevel = finalLevel;
 		this.nextLevelButtonText.text = (this.isFinalLevel ? LocalisationManager.Instance().GetTranslation("Finish") : LocalisationManager.Instance().GetTranslation("NLevel"));
 	}
 
-	// Token: 0x06000847 RID: 2119 RVA: 0x00037A5C File Offset: 0x00035C5C
+	// Token: 0x06000840 RID: 2112 RVA: 0x00037944 File Offset: 0x00035B44
 	public void UpdateLevelInformation(string levelId, float timeTaken, float timeDifference, int starCount, bool firstPlay)
 	{
 		this.SetupTimings(timeTaken, timeDifference, firstPlay);
@@ -350,7 +350,7 @@ public class Story_LevelCompletePopup : AppScreen
 		this.trainingText.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06000848 RID: 2120 RVA: 0x00037B88 File Offset: 0x00035D88
+	// Token: 0x06000841 RID: 2113 RVA: 0x00037A6C File Offset: 0x00035C6C
 	public void SetupTimings(float timeTaken, float timeDifference, bool firstPlay)
 	{
 		TimeSpan timeSpan = TimeSpan.FromSeconds((double)timeTaken);
@@ -391,7 +391,7 @@ public class Story_LevelCompletePopup : AppScreen
 		this.timeTaken = timeTaken;
 	}
 
-	// Token: 0x06000849 RID: 2121 RVA: 0x00037CF4 File Offset: 0x00035EF4
+	// Token: 0x06000842 RID: 2114 RVA: 0x00037BD4 File Offset: 0x00035DD4
 	public void SetupCollectables(int starCount, int collectablesCount, int cupcakesFound, int socksFound, int bonusesFound)
 	{
 		for (int i = 0; i < 3; i++)
@@ -433,7 +433,7 @@ public class Story_LevelCompletePopup : AppScreen
 		this.bonusesFound = bonusesFound;
 	}
 
-	// Token: 0x0600084A RID: 2122 RVA: 0x00007CA6 File Offset: 0x00005EA6
+	// Token: 0x06000843 RID: 2115 RVA: 0x00007BB8 File Offset: 0x00005DB8
 	public void ReplayButtonPressed()
 	{
 		if (this.TryStopTweening())
@@ -444,7 +444,7 @@ public class Story_LevelCompletePopup : AppScreen
 		AudioController.Play("ui_select");
 	}
 
-	// Token: 0x0600084B RID: 2123 RVA: 0x00007CC8 File Offset: 0x00005EC8
+	// Token: 0x06000844 RID: 2116 RVA: 0x00007BDA File Offset: 0x00005DDA
 	public void LevelsButtonPressed()
 	{
 		if (this.TryStopTweening())
@@ -456,7 +456,7 @@ public class Story_LevelCompletePopup : AppScreen
 		AudioController.Play("ui_select");
 	}
 
-	// Token: 0x0600084C RID: 2124 RVA: 0x00037DEC File Offset: 0x00035FEC
+	// Token: 0x06000845 RID: 2117 RVA: 0x00037CCC File Offset: 0x00035ECC
 	public void NextLevelButtonPressed()
 	{
 		if (this.TryStopTweening())
@@ -482,7 +482,7 @@ public class Story_LevelCompletePopup : AppScreen
 		AudioController.Play("ui_select");
 	}
 
-	// Token: 0x0600084D RID: 2125 RVA: 0x00037E48 File Offset: 0x00036048
+	// Token: 0x06000846 RID: 2118 RVA: 0x00037D28 File Offset: 0x00035F28
 	private bool TryStopTweening()
 	{
 		if (this.state == Story_LevelCompletePopup.State.None)
@@ -491,7 +491,7 @@ public class Story_LevelCompletePopup : AppScreen
 		}
 		this.panel.transform.localScale = Vector3.one;
 		TimeSpan timeSpan = TimeSpan.FromSeconds((double)this.timeTaken);
-		string text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+		string text = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
 		if (text.Substring(0, 1) == "0")
 		{
 			text = text.Remove(0, 1);
@@ -549,140 +549,140 @@ public class Story_LevelCompletePopup : AppScreen
 		return true;
 	}
 
-	// Token: 0x040008D4 RID: 2260
+	// Token: 0x040008CE RID: 2254
 	public const float ShowTweenDuration = 0.25f;
 
-	// Token: 0x040008D5 RID: 2261
+	// Token: 0x040008CF RID: 2255
 	public const float TimeCountUpDuration = 1f;
 
-	// Token: 0x040008D6 RID: 2262
+	// Token: 0x040008D0 RID: 2256
 	public const float DifferenceTweenDuraton = 0.4f;
 
-	// Token: 0x040008D7 RID: 2263
+	// Token: 0x040008D1 RID: 2257
 	public const float StarsTweenDuraton = 0.5f;
 
-	// Token: 0x040008D8 RID: 2264
+	// Token: 0x040008D2 RID: 2258
 	public const float StarsTweenUpScale = 1.2f;
 
-	// Token: 0x040008D9 RID: 2265
+	// Token: 0x040008D3 RID: 2259
 	public const float CollectablesTweenDuraton = 0.5f;
 
-	// Token: 0x040008DA RID: 2266
+	// Token: 0x040008D4 RID: 2260
 	public const float CollectablesTweenUpScale = 1.2f;
 
-	// Token: 0x040008DB RID: 2267
+	// Token: 0x040008D5 RID: 2261
 	public const float TimeBetween = 0.3f;
 
-	// Token: 0x040008DC RID: 2268
+	// Token: 0x040008D6 RID: 2262
 	public GameObject panel;
 
-	// Token: 0x040008DD RID: 2269
+	// Token: 0x040008D7 RID: 2263
 	public Image blackOverlay;
 
-	// Token: 0x040008DE RID: 2270
+	// Token: 0x040008D8 RID: 2264
 	public Text timeTakenText;
 
-	// Token: 0x040008DF RID: 2271
+	// Token: 0x040008D9 RID: 2265
 	public Text timeDifferenceText;
 
-	// Token: 0x040008E0 RID: 2272
+	// Token: 0x040008DA RID: 2266
 	public Text nextLevelButtonText;
 
-	// Token: 0x040008E1 RID: 2273
+	// Token: 0x040008DB RID: 2267
 	public Text trainingText;
 
-	// Token: 0x040008E2 RID: 2274
+	// Token: 0x040008DC RID: 2268
 	public Image[] starImages;
 
-	// Token: 0x040008E3 RID: 2275
+	// Token: 0x040008DD RID: 2269
 	public Image starOutline;
 
-	// Token: 0x040008E4 RID: 2276
+	// Token: 0x040008DE RID: 2270
 	public Sprite starFilledSprite;
 
-	// Token: 0x040008E5 RID: 2277
+	// Token: 0x040008DF RID: 2271
 	public Sprite starEmptySprite;
 
-	// Token: 0x040008E6 RID: 2278
+	// Token: 0x040008E0 RID: 2272
 	public Image[] collectableImages;
 
-	// Token: 0x040008E7 RID: 2279
+	// Token: 0x040008E1 RID: 2273
 	public Sprite emptyCollectableSprite;
 
-	// Token: 0x040008E8 RID: 2280
+	// Token: 0x040008E2 RID: 2274
 	public Sprite cupcakeCollectableSprite;
 
-	// Token: 0x040008E9 RID: 2281
+	// Token: 0x040008E3 RID: 2275
 	public Sprite sockCollectableSprite;
 
-	// Token: 0x040008EA RID: 2282
+	// Token: 0x040008E4 RID: 2276
 	public Sprite bonusCollectableSprite;
 
-	// Token: 0x040008EB RID: 2283
+	// Token: 0x040008E5 RID: 2277
 	public GameObject bonusUnlockedPopup;
 
-	// Token: 0x040008EC RID: 2284
+	// Token: 0x040008E6 RID: 2278
 	public Image bonusUnlockedBody;
 
-	// Token: 0x040008ED RID: 2285
+	// Token: 0x040008E7 RID: 2279
 	public Text bonusUnlockedText;
 
-	// Token: 0x040008EE RID: 2286
+	// Token: 0x040008E8 RID: 2280
 	private LevelUI levelUI;
 
-	// Token: 0x040008EF RID: 2287
+	// Token: 0x040008E9 RID: 2281
 	private Story_LevelCompletePopup.State state;
 
-	// Token: 0x040008F0 RID: 2288
+	// Token: 0x040008EA RID: 2282
 	private float timer;
 
-	// Token: 0x040008F1 RID: 2289
+	// Token: 0x040008EB RID: 2283
 	private float bonusUnlockTimer = -1f;
 
-	// Token: 0x040008F2 RID: 2290
+	// Token: 0x040008EC RID: 2284
 	private float timeTaken;
 
-	// Token: 0x040008F3 RID: 2291
+	// Token: 0x040008ED RID: 2285
 	private float finishedTime;
 
-	// Token: 0x040008F4 RID: 2292
+	// Token: 0x040008EE RID: 2286
 	private int starCount;
 
-	// Token: 0x040008F5 RID: 2293
+	// Token: 0x040008EF RID: 2287
 	private int collectablesCount;
 
-	// Token: 0x040008F6 RID: 2294
+	// Token: 0x040008F0 RID: 2288
 	private int cupcakesFound;
 
-	// Token: 0x040008F7 RID: 2295
+	// Token: 0x040008F1 RID: 2289
 	private int socksFound;
 
-	// Token: 0x040008F8 RID: 2296
+	// Token: 0x040008F2 RID: 2290
 	private int bonusesFound;
 
-	// Token: 0x040008F9 RID: 2297
+	// Token: 0x040008F3 RID: 2291
 	private int tweenIndex;
 
-	// Token: 0x040008FA RID: 2298
+	// Token: 0x040008F4 RID: 2292
 	private bool isFinalLevel;
 
-	// Token: 0x040008FB RID: 2299
+	// Token: 0x040008F5 RID: 2293
 	private bool isBonusLevel;
 
 	// Token: 0x0200015A RID: 346
 	public enum State
 	{
-		// Token: 0x040008FD RID: 2301
+		// Token: 0x040008F7 RID: 2295
 		None,
-		// Token: 0x040008FE RID: 2302
+		// Token: 0x040008F8 RID: 2296
 		Show,
-		// Token: 0x040008FF RID: 2303
+		// Token: 0x040008F9 RID: 2297
 		Time,
-		// Token: 0x04000900 RID: 2304
+		// Token: 0x040008FA RID: 2298
 		Difference,
-		// Token: 0x04000901 RID: 2305
+		// Token: 0x040008FB RID: 2299
 		Stars,
-		// Token: 0x04000902 RID: 2306
+		// Token: 0x040008FC RID: 2300
 		Collectables
 	}
 }
