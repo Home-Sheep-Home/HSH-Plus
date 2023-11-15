@@ -354,7 +354,7 @@ public class Story_LevelCompletePopup : AppScreen
 	public void SetupTimings(float timeTaken, float timeDifference, bool firstPlay)
 	{
 		TimeSpan timeSpan = TimeSpan.FromSeconds((double)timeTaken);
-		string text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+		string text = string.Format("{0:D2}:{1:D2}.{2:D3}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
 		if (text.Substring(0, 1) == "0")
 		{
 			text = text.Remove(0, 1);
