@@ -71,6 +71,7 @@ public class StorySheepStatusDisplay : MonoBehaviour
 				return;
 			}
 			this.state = 0;
+   			this.AnimateOffScreen();
 		}
 	}
 
