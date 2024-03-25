@@ -319,7 +319,10 @@ public class Sheep : LevelObject
 		}
 		else
 		{
-			this.framesInAir++;
+			if (!this.dragging)
+			{
+				this.framesInAir++;
+			}
 			if (this.framesInAir > 4)
 			{
 				float num = -Vector2.Dot(this.body.velocity, this.body.transform.up) / this.body.transform.up.magnitude;

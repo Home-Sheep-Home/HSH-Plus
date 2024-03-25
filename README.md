@@ -5,6 +5,8 @@ Makes Home Sheep Home a lot better
 * Adds milliseconds to the level complete screen timer
 * Lets you drag the sheep anywhere on a level
 * Make the sheep status display always on by pressing P (Press P again to disable it always being on)
+* Press Ctrl+R to reload the level
+* Adds milliseconds to your best time on level panels
 
 ## Installation
 ### Download Assembly-CSharp file
