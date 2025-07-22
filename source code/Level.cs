@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using ClockStone;
 using UnityEngine;
 
-// Token: 0x020000ED RID: 237
+// Token: 0x020000EE RID: 238
 public class Level : MonoBehaviour
 {
-	// Token: 0x060005FA RID: 1530 RVA: 0x00006411 File Offset: 0x00004611
+	// Token: 0x06000607 RID: 1543 RVA: 0x00006464 File Offset: 0x00004664
 	private void Awake()
 	{
 		if (Level.instance == null)
@@ -20,7 +20,7 @@ public class Level : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005FB RID: 1531 RVA: 0x00006450 File Offset: 0x00004650
+	// Token: 0x06000608 RID: 1544 RVA: 0x000064A3 File Offset: 0x000046A3
 	private void Start()
 	{
 		if (GameManager.instance.IsPartyGame() || (LevelLoader.instance.levelRestarted && !LevelLoader.instance.loadingScreen.gameObject.activeInHierarchy))
@@ -31,7 +31,7 @@ public class Level : MonoBehaviour
 		this.PauseTime();
 	}
 
-	// Token: 0x060005FC RID: 1532 RVA: 0x0002BA28 File Offset: 0x00029C28
+	// Token: 0x06000609 RID: 1545 RVA: 0x0002BDF8 File Offset: 0x00029FF8
 	public void StartLevel()
 	{
 		if (Application.platform == RuntimePlatform.Android)
@@ -90,25 +90,25 @@ public class Level : MonoBehaviour
 		this.UnpauseTime();
 	}
 
-	// Token: 0x060005FD RID: 1533 RVA: 0x0000648D File Offset: 0x0000468D
+	// Token: 0x0600060A RID: 1546 RVA: 0x000064E0 File Offset: 0x000046E0
 	public void AddLevelObject(LevelObject objectToAdd)
 	{
 		this.objectList.Add(objectToAdd);
 	}
 
-	// Token: 0x060005FE RID: 1534 RVA: 0x0000649B File Offset: 0x0000469B
+	// Token: 0x0600060B RID: 1547 RVA: 0x000064EE File Offset: 0x000046EE
 	public void RemoveLevelObject(LevelObject objectToRemove)
 	{
 		this.objectList.Remove(objectToRemove);
 	}
 
-	// Token: 0x060005FF RID: 1535 RVA: 0x000064AA File Offset: 0x000046AA
+	// Token: 0x0600060C RID: 1548 RVA: 0x000064FD File Offset: 0x000046FD
 	public void PauseTime()
 	{
 		Time.timeScale = 0f;
 	}
 
-	// Token: 0x06000600 RID: 1536 RVA: 0x0002BBCC File Offset: 0x00029DCC
+	// Token: 0x0600060D RID: 1549 RVA: 0x0002BF9C File Offset: 0x0002A19C
 	public void UnpauseTime()
 	{
 		if (HackManager.Instance().hacks.turboMode.active)
@@ -124,7 +124,7 @@ public class Level : MonoBehaviour
 		Time.timeScale = 1f;
 	}
 
-	// Token: 0x06000601 RID: 1537 RVA: 0x0002BC28 File Offset: 0x00029E28
+	// Token: 0x0600060E RID: 1550 RVA: 0x0002BFF8 File Offset: 0x0002A1F8
 	public LevelObject FindObject(string name)
 	{
 		LevelObject result = null;
@@ -139,13 +139,13 @@ public class Level : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x06000602 RID: 1538 RVA: 0x000064B6 File Offset: 0x000046B6
+	// Token: 0x0600060F RID: 1551 RVA: 0x00006509 File Offset: 0x00004709
 	public void PickedUpCollectable(Collectable collectable)
 	{
 		this.obtainedCollectables.Add(collectable);
 	}
 
-	// Token: 0x06000603 RID: 1539 RVA: 0x000064C4 File Offset: 0x000046C4
+	// Token: 0x06000610 RID: 1552 RVA: 0x00006517 File Offset: 0x00004717
 	private void Update()
 	{
 		this.gameTime += Time.deltaTime;
@@ -155,7 +155,7 @@ public class Level : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000604 RID: 1540 RVA: 0x0002BC8C File Offset: 0x00029E8C
+	// Token: 0x06000611 RID: 1553 RVA: 0x0002C05C File Offset: 0x0002A25C
 	public void SaveLevelData()
 	{
 		for (int i = 0; i < this.obtainedCollectables.Count; i++)
@@ -202,7 +202,7 @@ public class Level : MonoBehaviour
 		AchievementManager.Instance().CheckAchievements(levelId);
 	}
 
-	// Token: 0x06000605 RID: 1541 RVA: 0x000064F8 File Offset: 0x000046F8
+	// Token: 0x06000612 RID: 1554 RVA: 0x0000654B File Offset: 0x0000474B
 	private void OnDestroy()
 	{
 		if (this.music != null)
@@ -212,90 +212,90 @@ public class Level : MonoBehaviour
 		Time.timeScale = 1f;
 	}
 
-	// Token: 0x0400063E RID: 1598
+	// Token: 0x0400064A RID: 1610
 	public static Level instance;
 
-	// Token: 0x0400063F RID: 1599
+	// Token: 0x0400064B RID: 1611
 	public LevelBackground levelBackground;
 
-	// Token: 0x04000640 RID: 1600
+	// Token: 0x0400064C RID: 1612
 	public HiddenRoom hiddenRoom;
 
-	// Token: 0x04000641 RID: 1601
+	// Token: 0x0400064D RID: 1613
 	public LevelCanvas levelCanvas;
 
-	// Token: 0x04000642 RID: 1602
+	// Token: 0x0400064E RID: 1614
 	public LevelParticles levelParticles;
 
-	// Token: 0x04000643 RID: 1603
+	// Token: 0x0400064F RID: 1615
 	public SheepManager sheepManager;
 
-	// Token: 0x04000644 RID: 1604
+	// Token: 0x04000650 RID: 1616
 	public Hints hints;
 
-	// Token: 0x04000645 RID: 1605
+	// Token: 0x04000651 RID: 1617
 	public bool shakeLevel;
 
-	// Token: 0x04000646 RID: 1606
+	// Token: 0x04000652 RID: 1618
 	public bool scaffoldLevel;
 
-	// Token: 0x04000647 RID: 1607
+	// Token: 0x04000653 RID: 1619
 	private MeshFilter objectMesh;
 
-	// Token: 0x04000648 RID: 1608
+	// Token: 0x04000654 RID: 1620
 	public List<LevelObject> objectList;
 
-	// Token: 0x04000649 RID: 1609
+	// Token: 0x04000655 RID: 1621
 	public bool restartAllowed;
 
-	// Token: 0x0400064A RID: 1610
+	// Token: 0x04000656 RID: 1622
 	public GoalData goalData;
 
-	// Token: 0x0400064B RID: 1611
+	// Token: 0x04000657 RID: 1623
 	public TriggerVolume goal;
 
-	// Token: 0x0400064C RID: 1612
+	// Token: 0x04000658 RID: 1624
 	public TriggerVolume sheepLock;
 
-	// Token: 0x0400064D RID: 1613
+	// Token: 0x04000659 RID: 1625
 	public bool changeSheepOnLock;
 
-	// Token: 0x0400064E RID: 1614
+	// Token: 0x0400065A RID: 1626
 	public TriggerVolume sheepUnlock;
 
-	// Token: 0x0400064F RID: 1615
+	// Token: 0x0400065B RID: 1627
 	public TriggerVolume triggerBreakage;
 
-	// Token: 0x04000650 RID: 1616
+	// Token: 0x0400065C RID: 1628
 	public TriggerVolume triggerFalling;
 
-	// Token: 0x04000651 RID: 1617
+	// Token: 0x0400065D RID: 1629
 	public LevelObject[] planks;
 
-	// Token: 0x04000652 RID: 1618
+	// Token: 0x0400065E RID: 1630
 	public Bucket bucket;
 
-	// Token: 0x04000653 RID: 1619
+	// Token: 0x0400065F RID: 1631
 	public LevelObject windsock;
 
-	// Token: 0x04000654 RID: 1620
+	// Token: 0x04000660 RID: 1632
 	public ScissorLift scissorLift;
 
-	// Token: 0x04000655 RID: 1621
+	// Token: 0x04000661 RID: 1633
 	public TractorBeam aliens;
 
-	// Token: 0x04000656 RID: 1622
+	// Token: 0x04000662 RID: 1634
 	public Farmer farmer;
 
-	// Token: 0x04000657 RID: 1623
+	// Token: 0x04000663 RID: 1635
 	public GameObject sign;
 
-	// Token: 0x04000658 RID: 1624
+	// Token: 0x04000664 RID: 1636
 	private AudioObject music;
 
-	// Token: 0x04000659 RID: 1625
+	// Token: 0x04000665 RID: 1637
 	private List<Collectable> obtainedCollectables;
 
-	// Token: 0x0400065A RID: 1626
+	// Token: 0x04000666 RID: 1638
 	private float gameTime;
 }
