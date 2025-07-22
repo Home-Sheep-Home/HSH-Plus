@@ -4,12 +4,12 @@ using ClockStone;
 using DG.Tweening;
 using UnityEngine;
 
-// Token: 0x020000E6 RID: 230
+// Token: 0x0200012A RID: 298
 public class Sheep : LevelObject
 {
-	// Token: 0x17000006 RID: 6
-	// (get) Token: 0x06000678 RID: 1656 RVA: 0x0002917F File Offset: 0x0002737F
-	// (set) Token: 0x06000679 RID: 1657 RVA: 0x00029187 File Offset: 0x00027387
+	// Token: 0x1700003A RID: 58
+	// (get) Token: 0x0600073B RID: 1851 RVA: 0x0000718C File Offset: 0x0000538C
+	// (set) Token: 0x0600073C RID: 1852 RVA: 0x00007194 File Offset: 0x00005394
 	[HideInInspector]
 	public string animState
 	{
@@ -23,17 +23,17 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x17000007 RID: 7
-	// (get) Token: 0x0600067A RID: 1658 RVA: 0x00029190 File Offset: 0x00027390
-	// (set) Token: 0x0600067B RID: 1659 RVA: 0x00029198 File Offset: 0x00027398
+	// Token: 0x1700003B RID: 59
+	// (get) Token: 0x0600073D RID: 1853 RVA: 0x0000719D File Offset: 0x0000539D
+	// (set) Token: 0x0600073E RID: 1854 RVA: 0x000071A5 File Offset: 0x000053A5
 	public DashAction DashAction { get; private set; }
 
-	// Token: 0x17000008 RID: 8
-	// (get) Token: 0x0600067C RID: 1660 RVA: 0x000291A1 File Offset: 0x000273A1
-	// (set) Token: 0x0600067D RID: 1661 RVA: 0x000291A9 File Offset: 0x000273A9
+	// Token: 0x1700003C RID: 60
+	// (get) Token: 0x0600073F RID: 1855 RVA: 0x000071AE File Offset: 0x000053AE
+	// (set) Token: 0x06000740 RID: 1856 RVA: 0x000071B6 File Offset: 0x000053B6
 	public BaaAction BaaAction { get; private set; }
 
-	// Token: 0x0600067E RID: 1662 RVA: 0x000291B4 File Offset: 0x000273B4
+	// Token: 0x06000741 RID: 1857 RVA: 0x00032F1C File Offset: 0x0003111C
 	private void Awake()
 	{
 		this.body = base.gameObject.GetComponent<Rigidbody2D>();
@@ -49,7 +49,7 @@ public class Sheep : LevelObject
 		this.useTint = !HackManager.Instance().hacks.pinkSheep.active;
 	}
 
-	// Token: 0x0600067F RID: 1663 RVA: 0x000292B4 File Offset: 0x000274B4
+	// Token: 0x06000742 RID: 1858 RVA: 0x0003301C File Offset: 0x0003121C
 	private void Start()
 	{
 		this.tint = 1f;
@@ -71,7 +71,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000680 RID: 1664
+	// Token: 0x06000743 RID: 1859 RVA: 0x00033088 File Offset: 0x00031288
 	protected override void Update()
 	{
 		if (this.megaJump && this.megaJumpTimer < this.megaJumpDuration)
@@ -119,7 +119,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000681 RID: 1665 RVA: 0x0002947C File Offset: 0x0002767C
+	// Token: 0x06000744 RID: 1860 RVA: 0x00033210 File Offset: 0x00031410
 	private void LateUpdate()
 	{
 		if (this.helmet != null && this.helmet.gameObject.activeSelf)
@@ -137,7 +137,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000682 RID: 1666 RVA: 0x00029560 File Offset: 0x00027760
+	// Token: 0x06000745 RID: 1861 RVA: 0x000332F4 File Offset: 0x000314F4
 	private void FixedUpdate()
 	{
 		this.EvtEnterFrame();
@@ -150,14 +150,14 @@ public class Sheep : LevelObject
 		this.walkForce.Set(0f, 0f);
 	}
 
-	// Token: 0x06000683 RID: 1667 RVA: 0x000295B8 File Offset: 0x000277B8
+	// Token: 0x06000746 RID: 1862 RVA: 0x000071BF File Offset: 0x000053BF
 	public void PostProcess()
 	{
 		this.PostProcessJump();
 		this.UpdateAnimationState();
 	}
 
-	// Token: 0x06000684 RID: 1668 RVA: 0x000295C8 File Offset: 0x000277C8
+	// Token: 0x06000747 RID: 1863 RVA: 0x0003334C File Offset: 0x0003154C
 	public void PostProcessJump()
 	{
 		if (this.identity != Sheep.SheepName.Shirley && this.inWater)
@@ -171,7 +171,7 @@ public class Sheep : LevelObject
 		this.shouldJump = false;
 	}
 
-	// Token: 0x06000685 RID: 1669 RVA: 0x0002962C File Offset: 0x0002782C
+	// Token: 0x06000748 RID: 1864 RVA: 0x000333B0 File Offset: 0x000315B0
 	private void CommenceJump()
 	{
 		Vector2 velocity = this.body.velocity;
@@ -199,25 +199,25 @@ public class Sheep : LevelObject
 		this.animHitT = false;
 	}
 
-	// Token: 0x06000686 RID: 1670 RVA: 0x00029804 File Offset: 0x00027A04
+	// Token: 0x06000749 RID: 1865 RVA: 0x000071CD File Offset: 0x000053CD
 	public bool GetCanJump()
 	{
 		return this.canJump;
 	}
 
-	// Token: 0x06000687 RID: 1671 RVA: 0x0002980C File Offset: 0x00027A0C
+	// Token: 0x0600074A RID: 1866 RVA: 0x000071D5 File Offset: 0x000053D5
 	public void SetCanJump(bool newVal)
 	{
 		this.canJump = newVal;
 	}
 
-	// Token: 0x06000688 RID: 1672 RVA: 0x00029815 File Offset: 0x00027A15
+	// Token: 0x0600074B RID: 1867 RVA: 0x000071DE File Offset: 0x000053DE
 	public void ResetAirFrames()
 	{
 		this.framesInAir = 0;
 	}
 
-	// Token: 0x06000689 RID: 1673 RVA: 0x00029820 File Offset: 0x00027A20
+	// Token: 0x0600074C RID: 1868 RVA: 0x00033588 File Offset: 0x00031788
 	public void Spawn(ItemData itemdata)
 	{
 		this.tags = new List<string>();
@@ -233,7 +233,7 @@ public class Sheep : LevelObject
 		base.transform.Rotate(new Vector3(0f, 0f, itemdata.position.degrees));
 	}
 
-	// Token: 0x0600068A RID: 1674 RVA: 0x000298CE File Offset: 0x00027ACE
+	// Token: 0x0600074D RID: 1869 RVA: 0x000071E7 File Offset: 0x000053E7
 	public void Lock(bool changeSheepOnLock)
 	{
 		if (!this.locked)
@@ -251,7 +251,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x0600068B RID: 1675 RVA: 0x00029904 File Offset: 0x00027B04
+	// Token: 0x0600074E RID: 1870 RVA: 0x00033638 File Offset: 0x00031838
 	private void EvtEnterFrame()
 	{
 		if (this.hasParachute)
@@ -418,7 +418,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x0600068C RID: 1676 RVA: 0x00029E78 File Offset: 0x00028078
+	// Token: 0x0600074F RID: 1871 RVA: 0x00033BB4 File Offset: 0x00031DB4
 	private void FlipObject(GameObject gameObject, bool reverse)
 	{
 		Vector2 vector = gameObject.transform.localPosition;
@@ -439,7 +439,7 @@ public class Sheep : LevelObject
 		gameObject.transform.localScale = vector2;
 	}
 
-	// Token: 0x0600068D RID: 1677 RVA: 0x00029F60 File Offset: 0x00028160
+	// Token: 0x06000750 RID: 1872 RVA: 0x00033C9C File Offset: 0x00031E9C
 	private void EvtCheckJump()
 	{
 		if (this.spaceSheep)
@@ -461,7 +461,7 @@ public class Sheep : LevelObject
 		this.haventPushedSince++;
 	}
 
-	// Token: 0x0600068E RID: 1678 RVA: 0x00029FBC File Offset: 0x000281BC
+	// Token: 0x06000751 RID: 1873 RVA: 0x00033CF8 File Offset: 0x00031EF8
 	public void TryJump()
 	{
 		if (this.jumpDelay > 0)
@@ -480,14 +480,14 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x0600068F RID: 1679 RVA: 0x0002A010 File Offset: 0x00028210
+	// Token: 0x06000752 RID: 1874 RVA: 0x0000721D File Offset: 0x0000541D
 	public void ForceJump()
 	{
 		this.DoJump();
 		this.TryJump();
 	}
 
-	// Token: 0x06000690 RID: 1680 RVA: 0x0002A01E File Offset: 0x0002821E
+	// Token: 0x06000753 RID: 1875 RVA: 0x0000722B File Offset: 0x0000542B
 	private void DoJump()
 	{
 		if (this.locked || this.lightning)
@@ -497,21 +497,21 @@ public class Sheep : LevelObject
 		this.shouldJump = true;
 	}
 
-	// Token: 0x06000691 RID: 1681 RVA: 0x0002A038 File Offset: 0x00028238
+	// Token: 0x06000754 RID: 1876 RVA: 0x00007245 File Offset: 0x00005445
 	public void Select()
 	{
 		this.selected = true;
 		this.highlight.SetActive(true);
 	}
 
-	// Token: 0x06000692 RID: 1682 RVA: 0x0002A04D File Offset: 0x0002824D
+	// Token: 0x06000755 RID: 1877 RVA: 0x0000725A File Offset: 0x0000545A
 	public void Deselect()
 	{
 		this.selected = false;
 		this.highlight.SetActive(false);
 	}
 
-	// Token: 0x06000693 RID: 1683 RVA: 0x0002A064 File Offset: 0x00028264
+	// Token: 0x06000756 RID: 1878 RVA: 0x00033D4C File Offset: 0x00031F4C
 	public void UpdateIndicator(Color newColor, Sprite newNumberSprite)
 	{
 		this.highlight.GetComponent<SpriteRenderer>().color = newColor;
@@ -525,7 +525,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000694 RID: 1684 RVA: 0x0002A0B9 File Offset: 0x000282B9
+	// Token: 0x06000757 RID: 1879 RVA: 0x0000726F File Offset: 0x0000546F
 	public void ShowIndicator()
 	{
 		if (!GameManager.instance.IsPartyGame())
@@ -534,7 +534,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000695 RID: 1685 RVA: 0x0002A0D8 File Offset: 0x000282D8
+	// Token: 0x06000758 RID: 1880 RVA: 0x00033DA4 File Offset: 0x00031FA4
 	public void SetPartyHatSprite(Sprite sprite)
 	{
 		if (sprite != null)
@@ -553,7 +553,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000696 RID: 1686 RVA: 0x0002A130 File Offset: 0x00028330
+	// Token: 0x06000759 RID: 1881 RVA: 0x00033DFC File Offset: 0x00031FFC
 	public void SetTint()
 	{
 		this.tint = Mathf.Clamp(this.tint, 0f, 1f);
@@ -566,7 +566,7 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000697 RID: 1687 RVA: 0x0002A19C File Offset: 0x0002839C
+	// Token: 0x0600075A RID: 1882 RVA: 0x00033E68 File Offset: 0x00032068
 	public void WalkForce(float dir)
 	{
 		if (this.CheckSheepIsLockedOrShocked())
@@ -623,11 +623,11 @@ public class Sheep : LevelObject
 		{
 			num3 *= 5f;
 		}
-		this.walkForce.x = Vector2.right.x * num3;
-		this.walkForce.y = Vector2.right.y * num3;
+		this.walkForce.x = Vector2.right.x * num3 * 1.3f;
+		this.walkForce.y = Vector2.right.y * num3 * 1.3f;
 	}
 
-	// Token: 0x06000698 RID: 1688 RVA: 0x0002A424 File Offset: 0x00028624
+	// Token: 0x0600075B RID: 1883 RVA: 0x000340FC File Offset: 0x000322FC
 	public void Shocked()
 	{
 		if (this.identity == Sheep.SheepName.Shaun)
@@ -644,27 +644,27 @@ public class Sheep : LevelObject
 		}
 	}
 
-	// Token: 0x06000699 RID: 1689 RVA: 0x0002A47B File Offset: 0x0002867B
+	// Token: 0x0600075C RID: 1884 RVA: 0x0000728D File Offset: 0x0000548D
 	public void LookLeft()
 	{
 		this.animDirection = "l";
 		this.startingAnimDirection = "l";
 	}
 
-	// Token: 0x0600069A RID: 1690 RVA: 0x0002A493 File Offset: 0x00028693
+	// Token: 0x0600075D RID: 1885 RVA: 0x000072A5 File Offset: 0x000054A5
 	public void LookRight()
 	{
 		this.animDirection = "r";
 		this.startingAnimDirection = "r";
 	}
 
-	// Token: 0x0600069B RID: 1691 RVA: 0x0002A4AB File Offset: 0x000286AB
+	// Token: 0x0600075E RID: 1886 RVA: 0x000072BD File Offset: 0x000054BD
 	private void SetAnimShocked()
 	{
 		this.animState = "shocked";
 	}
 
-	// Token: 0x0600069C RID: 1692 RVA: 0x0002A4B8 File Offset: 0x000286B8
+	// Token: 0x0600075F RID: 1887 RVA: 0x00034154 File Offset: 0x00032354
 	private void UpdateAnimationState()
 	{
 		if (this.electrocuted)
@@ -975,7 +975,7 @@ public class Sheep : LevelObject
 		this.animHitT = false;
 	}
 
-	// Token: 0x0600069D RID: 1693 RVA: 0x0002AC64 File Offset: 0x00028E64
+	// Token: 0x06000760 RID: 1888 RVA: 0x000072CA File Offset: 0x000054CA
 	public void ResetAnimationhits()
 	{
 		this.sheepAnimation.SetDirection(this.animDirection);
@@ -984,7 +984,7 @@ public class Sheep : LevelObject
 		this.animHitT = false;
 	}
 
-	// Token: 0x0600069E RID: 1694 RVA: 0x0002AC8C File Offset: 0x00028E8C
+	// Token: 0x06000761 RID: 1889 RVA: 0x00034900 File Offset: 0x00032B00
 	public void ResetPowerups()
 	{
 		this.megaJumpTimer = this.megaJumpDuration;
@@ -1001,7 +1001,7 @@ public class Sheep : LevelObject
 		base.GetComponent<Rigidbody2D>().mass = this.sheepMass;
 	}
 
-	// Token: 0x0600069F RID: 1695 RVA: 0x0002AD20 File Offset: 0x00028F20
+	// Token: 0x06000762 RID: 1890 RVA: 0x000072F2 File Offset: 0x000054F2
 	public void MegaJump(float duration)
 	{
 		this.megaJump = true;
@@ -1010,7 +1010,7 @@ public class Sheep : LevelObject
 		AudioController.Play("power_up-jump");
 	}
 
-	// Token: 0x060006A0 RID: 1696 RVA: 0x0002AD46 File Offset: 0x00028F46
+	// Token: 0x06000763 RID: 1891 RVA: 0x00007318 File Offset: 0x00005518
 	public void SpeedBoost(float duration)
 	{
 		this.speedBoost = true;
@@ -1019,7 +1019,7 @@ public class Sheep : LevelObject
 		AudioController.Play("power_up-speed");
 	}
 
-	// Token: 0x060006A1 RID: 1697 RVA: 0x0002AD6C File Offset: 0x00028F6C
+	// Token: 0x06000764 RID: 1892 RVA: 0x00034994 File Offset: 0x00032B94
 	public void Grow(float duration)
 	{
 		base.transform.DOScale(2f, 0.5f);
@@ -1030,7 +1030,7 @@ public class Sheep : LevelObject
 		AudioController.Play("power_up-super");
 	}
 
-	// Token: 0x060006A2 RID: 1698 RVA: 0x0002ADCA File Offset: 0x00028FCA
+	// Token: 0x06000765 RID: 1893 RVA: 0x0000733E File Offset: 0x0000553E
 	public void Lightning()
 	{
 		this.lightning = true;
@@ -1039,13 +1039,13 @@ public class Sheep : LevelObject
 		this.lightningDuration = 1f;
 	}
 
-	// Token: 0x060006A3 RID: 1699 RVA: 0x0002ADF0 File Offset: 0x00028FF0
+	// Token: 0x06000766 RID: 1894 RVA: 0x00007364 File Offset: 0x00005564
 	public bool CheckSheepIsLockedOrShocked()
 	{
 		return this.locked || this.lightning;
 	}
 
-	// Token: 0x060006A4 RID: 1700 RVA: 0x0002AE08 File Offset: 0x00029008
+	// Token: 0x06000767 RID: 1895 RVA: 0x000349F4 File Offset: 0x00032BF4
 	public void Dash()
 	{
 		this.DashAction = base.GetComponent<DashAction>();
@@ -1057,7 +1057,7 @@ public class Sheep : LevelObject
 		Debug.Log(base.gameObject.name + " is trying to Dash, but no Dash component could be found!");
 	}
 
-	// Token: 0x060006A5 RID: 1701 RVA: 0x0002AE58 File Offset: 0x00029058
+	// Token: 0x06000768 RID: 1896 RVA: 0x00034A44 File Offset: 0x00032C44
 	public void Baa()
 	{
 		this.BaaAction = base.GetComponent<BaaAction>();
@@ -1069,344 +1069,344 @@ public class Sheep : LevelObject
 		Debug.Log(base.gameObject.name + " is trying to Baa, but no Baa component could be found!");
 	}
 
-	// Token: 0x060013AC RID: 5036
+	// Token: 0x0600076A RID: 1898 RVA: 0x00007379 File Offset: 0x00005579
 	private void OnMouseDown()
 	{
 		this.offset = base.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		this.dragging = true;
 	}
 
-	// Token: 0x060013AD RID: 5037
+	// Token: 0x0600076B RID: 1899 RVA: 0x000073A7 File Offset: 0x000055A7
 	private void OnMouseUp()
 	{
 		this.dragging = false;
 	}
 
-	// Token: 0x04000678 RID: 1656
+	// Token: 0x040007C9 RID: 1993
 	[Header("Sheep")]
 	public Sheep.SheepName identity;
 
-	// Token: 0x04000679 RID: 1657
+	// Token: 0x040007CA RID: 1994
 	public SheepAnimation sheepAnimation;
 
-	// Token: 0x0400067A RID: 1658
+	// Token: 0x040007CB RID: 1995
 	public GameObject topShape;
 
-	// Token: 0x0400067B RID: 1659
+	// Token: 0x040007CC RID: 1996
 	public GameObject leftShape;
 
-	// Token: 0x0400067C RID: 1660
+	// Token: 0x040007CD RID: 1997
 	public GameObject rightShape;
 
-	// Token: 0x0400067D RID: 1661
+	// Token: 0x040007CE RID: 1998
 	public GameObject bottomShape;
 
-	// Token: 0x0400067E RID: 1662
+	// Token: 0x040007CF RID: 1999
 	public GameObject highlight;
 
-	// Token: 0x0400067F RID: 1663
+	// Token: 0x040007D0 RID: 2000
 	public SpriteRenderer playerNumberSprite;
 
-	// Token: 0x04000680 RID: 1664
+	// Token: 0x040007D1 RID: 2001
 	public GameObject parachute;
 
-	// Token: 0x04000681 RID: 1665
+	// Token: 0x040007D2 RID: 2002
 	public GameObject zap;
 
-	// Token: 0x04000682 RID: 1666
+	// Token: 0x040007D3 RID: 2003
 	public GameObject smoke;
 
-	// Token: 0x04000683 RID: 1667
+	// Token: 0x040007D4 RID: 2004
 	public SpriteRenderer helmet;
 
-	// Token: 0x04000684 RID: 1668
+	// Token: 0x040007D5 RID: 2005
 	public GameObject sleepingZeds;
 
-	// Token: 0x04000685 RID: 1669
+	// Token: 0x040007D6 RID: 2006
 	public ParticleSystem smokeParticles;
 
-	// Token: 0x04000686 RID: 1670
+	// Token: 0x040007D7 RID: 2007
 	public ParticleSystem drippingParticles;
 
-	// Token: 0x04000687 RID: 1671
+	// Token: 0x040007D8 RID: 2008
 	public ParticleSystem bubbleParticles;
 
-	// Token: 0x04000688 RID: 1672
+	// Token: 0x040007D9 RID: 2009
 	public bool disableStuckJump;
 
-	// Token: 0x04000689 RID: 1673
+	// Token: 0x040007DA RID: 2010
 	public bool invertControls;
 
-	// Token: 0x0400068A RID: 1674
+	// Token: 0x040007DB RID: 2011
 	public bool useTint = true;
 
-	// Token: 0x0400068B RID: 1675
+	// Token: 0x040007DC RID: 2012
 	public string startingAnimDirection = "r";
 
-	// Token: 0x0400068C RID: 1676
+	// Token: 0x040007DD RID: 2013
 	public float impulseJump = 5f;
 
-	// Token: 0x0400068D RID: 1677
+	// Token: 0x040007DE RID: 2014
 	public float impulseJumpWater = 4f;
 
-	// Token: 0x0400068E RID: 1678
+	// Token: 0x040007DF RID: 2015
 	public float impulseWalk = 0.1f;
 
-	// Token: 0x0400068F RID: 1679
+	// Token: 0x040007E0 RID: 2016
 	public float impulseAir = 0.05f;
 
-	// Token: 0x04000690 RID: 1680
+	// Token: 0x040007E1 RID: 2017
 	public float wallJumpSpeed = 11f;
 
-	// Token: 0x04000691 RID: 1681
+	// Token: 0x040007E2 RID: 2018
 	public float maxWalk = 2f;
 
-	// Token: 0x04000692 RID: 1682
+	// Token: 0x040007E3 RID: 2019
 	public float maxAir = 1f;
 
-	// Token: 0x04000693 RID: 1683
+	// Token: 0x040007E4 RID: 2020
 	public int bubbleDelay = 75;
 
-	// Token: 0x04000694 RID: 1684
+	// Token: 0x040007E5 RID: 2021
 	public bool spaceSheep;
 
-	// Token: 0x04000695 RID: 1685
+	// Token: 0x040007E6 RID: 2022
 	public bool alwaysRunning;
 
-	// Token: 0x04000696 RID: 1686
+	// Token: 0x040007E7 RID: 2023
 	private string _animState = "idle";
 
-	// Token: 0x04000697 RID: 1687
+	// Token: 0x040007E8 RID: 2024
 	[HideInInspector]
 	public string animDirection = "r";
 
-	// Token: 0x04000698 RID: 1688
+	// Token: 0x040007E9 RID: 2025
 	[HideInInspector]
 	public bool animHitL;
 
-	// Token: 0x04000699 RID: 1689
+	// Token: 0x040007EA RID: 2026
 	[HideInInspector]
 	public bool animHitR;
 
-	// Token: 0x0400069A RID: 1690
+	// Token: 0x040007EB RID: 2027
 	[HideInInspector]
 	public bool animHitT;
 
-	// Token: 0x0400069B RID: 1691
+	// Token: 0x040007EC RID: 2028
 	[HideInInspector]
 	public bool animPrevHitL;
 
-	// Token: 0x0400069C RID: 1692
+	// Token: 0x040007ED RID: 2029
 	[HideInInspector]
 	public bool animPrevHitR;
 
-	// Token: 0x0400069D RID: 1693
+	// Token: 0x040007EE RID: 2030
 	[HideInInspector]
 	public bool animPrevHitT;
 
-	// Token: 0x0400069E RID: 1694
+	// Token: 0x040007EF RID: 2031
 	[HideInInspector]
 	public bool electrocuted;
 
-	// Token: 0x0400069F RID: 1695
+	// Token: 0x040007F0 RID: 2032
 	[HideInInspector]
 	public bool electricOverride;
 
-	// Token: 0x040006A0 RID: 1696
+	// Token: 0x040007F1 RID: 2033
 	[HideInInspector]
 	public bool selected;
 
-	// Token: 0x040006A1 RID: 1697
+	// Token: 0x040007F2 RID: 2034
 	[HideInInspector]
 	public bool PlayerControlled;
 
-	// Token: 0x040006A2 RID: 1698
+	// Token: 0x040007F3 RID: 2035
 	[HideInInspector]
 	public string id = "";
 
-	// Token: 0x040006A3 RID: 1699
+	// Token: 0x040007F4 RID: 2036
 	[HideInInspector]
 	public int jumpDelay;
 
-	// Token: 0x040006A4 RID: 1700
+	// Token: 0x040007F5 RID: 2037
 	[HideInInspector]
 	public bool wasInWater;
 
-	// Token: 0x040006A5 RID: 1701
+	// Token: 0x040007F6 RID: 2038
 	[HideInInspector]
 	public LevelObject standingOn;
 
-	// Token: 0x040006A6 RID: 1702
+	// Token: 0x040007F7 RID: 2039
 	[HideInInspector]
 	public float speedCompensation = 1f;
 
-	// Token: 0x040006A7 RID: 1703
+	// Token: 0x040007F8 RID: 2040
 	[HideInInspector]
 	public bool locked;
 
-	// Token: 0x040006A8 RID: 1704
+	// Token: 0x040007F9 RID: 2041
 	[HideInInspector]
 	public bool touchingOneWay;
 
-	// Token: 0x040006A9 RID: 1705
+	// Token: 0x040007FA RID: 2042
 	[HideInInspector]
 	public LevelObject stoodUnder;
 
-	// Token: 0x040006AA RID: 1706
+	// Token: 0x040007FB RID: 2043
 	[HideInInspector]
 	public string walkType = "walk";
 
-	// Token: 0x040006AB RID: 1707
+	// Token: 0x040007FC RID: 2044
 	[HideInInspector]
 	public bool touchingField;
 
-	// Token: 0x040006AC RID: 1708
+	// Token: 0x040007FD RID: 2045
 	[HideInInspector]
 	public bool inDanger;
 
-	// Token: 0x040006AD RID: 1709
+	// Token: 0x040007FE RID: 2046
 	[HideInInspector]
 	public bool inBeam;
 
-	// Token: 0x040006AE RID: 1710
+	// Token: 0x040007FF RID: 2047
 	[HideInInspector]
 	public bool inBox;
 
-	// Token: 0x040006AF RID: 1711
+	// Token: 0x04000800 RID: 2048
 	[HideInInspector]
 	public bool touchingHat;
 
-	// Token: 0x040006B0 RID: 1712
+	// Token: 0x04000801 RID: 2049
 	[HideInInspector]
 	public int wallJumpDir;
 
-	// Token: 0x040006B1 RID: 1713
+	// Token: 0x04000802 RID: 2050
 	[HideInInspector]
 	public bool airborne;
 
-	// Token: 0x040006B2 RID: 1714
+	// Token: 0x04000803 RID: 2051
 	[HideInInspector]
 	public bool hasParachute;
 
-	// Token: 0x040006B3 RID: 1715
+	// Token: 0x04000804 RID: 2052
 	[HideInInspector]
 	public bool parachuteDeployed;
 
-	// Token: 0x040006B4 RID: 1716
+	// Token: 0x04000805 RID: 2053
 	[HideInInspector]
 	public bool onRoad;
 
-	// Token: 0x040006B5 RID: 1717
+	// Token: 0x04000806 RID: 2054
 	[HideInInspector]
 	public float tint = 1f;
 
-	// Token: 0x040006B8 RID: 1720
+	// Token: 0x04000809 RID: 2057
 	private bool canJump;
 
-	// Token: 0x040006B9 RID: 1721
+	// Token: 0x0400080A RID: 2058
 	private bool shouldJump;
 
-	// Token: 0x040006BA RID: 1722
+	// Token: 0x0400080B RID: 2059
 	private bool stuckJump;
 
-	// Token: 0x040006BB RID: 1723
+	// Token: 0x0400080C RID: 2060
 	private bool airJump;
 
-	// Token: 0x040006BC RID: 1724
+	// Token: 0x0400080D RID: 2061
 	private bool fastWalk;
 
-	// Token: 0x040006BD RID: 1725
+	// Token: 0x0400080E RID: 2062
 	private bool superJump;
 
-	// Token: 0x040006BE RID: 1726
+	// Token: 0x0400080F RID: 2063
 	private bool wallJump;
 
-	// Token: 0x040006BF RID: 1727
+	// Token: 0x04000810 RID: 2064
 	private bool strongPush;
 
-	// Token: 0x040006C0 RID: 1728
+	// Token: 0x04000811 RID: 2065
 	private bool sheepAlwaysSmoking;
 
-	// Token: 0x040006C1 RID: 1729
+	// Token: 0x04000812 RID: 2066
 	private bool megaJump;
 
-	// Token: 0x040006C2 RID: 1730
+	// Token: 0x04000813 RID: 2067
 	private float megaJumpTimer;
 
-	// Token: 0x040006C3 RID: 1731
+	// Token: 0x04000814 RID: 2068
 	private float megaJumpDuration;
 
-	// Token: 0x040006C4 RID: 1732
+	// Token: 0x04000815 RID: 2069
 	private bool speedBoost;
 
-	// Token: 0x040006C5 RID: 1733
+	// Token: 0x04000816 RID: 2070
 	private float speedBoostTimer;
 
-	// Token: 0x040006C6 RID: 1734
+	// Token: 0x04000817 RID: 2071
 	private float speedBoostDuration;
 
-	// Token: 0x040006C7 RID: 1735
+	// Token: 0x04000818 RID: 2072
 	private bool grow;
 
-	// Token: 0x040006C8 RID: 1736
+	// Token: 0x04000819 RID: 2073
 	private float growTimer;
 
-	// Token: 0x040006C9 RID: 1737
+	// Token: 0x0400081A RID: 2074
 	private float growDuration;
 
-	// Token: 0x040006CA RID: 1738
+	// Token: 0x0400081B RID: 2075
 	private bool lightning;
 
-	// Token: 0x040006CB RID: 1739
+	// Token: 0x0400081C RID: 2076
 	private float lightningTimer;
 
-	// Token: 0x040006CC RID: 1740
+	// Token: 0x0400081D RID: 2077
 	private float lightningDuration;
 
-	// Token: 0x040006CD RID: 1741
+	// Token: 0x0400081E RID: 2078
 	private float sheepMass;
 
-	// Token: 0x040006CE RID: 1742
+	// Token: 0x0400081F RID: 2079
 	private Vector2 walkForce;
 
-	// Token: 0x040006CF RID: 1743
+	// Token: 0x04000820 RID: 2080
 	private float prevTint;
 
-	// Token: 0x040006D0 RID: 1744
+	// Token: 0x04000821 RID: 2081
 	private string animPrevState = "";
 
-	// Token: 0x040006D1 RID: 1745
+	// Token: 0x04000822 RID: 2082
 	private int haventPushedSince = 10;
 
-	// Token: 0x040006D2 RID: 1746
+	// Token: 0x04000823 RID: 2083
 	private string animPrevDirection = "r";
 
-	// Token: 0x040006D3 RID: 1747
+	// Token: 0x04000824 RID: 2084
 	private bool prevSelected;
 
-	// Token: 0x040006D4 RID: 1748
+	// Token: 0x04000825 RID: 2085
 	private int framesInAir;
 
-	// Token: 0x040006D5 RID: 1749
+	// Token: 0x04000826 RID: 2086
 	private Vector3 raycastOffset = new Vector3(0f, 0f, 0f);
 
-	// Token: 0x040006D6 RID: 1750
+	// Token: 0x04000827 RID: 2087
 	private AudioObject walkLoopAudio;
 
-	// Token: 0x040010B3 RID: 4275
+	// Token: 0x04000828 RID: 2088
 	public bool dragging = false;
 
-	// Token: 0x040010B4 RID: 4276
+	// Token: 0x04000829 RID: 2089
 	public Vector3 offset;
 
-	// Token: 0x020001E5 RID: 485
+	// Token: 0x0200012B RID: 299
 	public enum SheepName
 	{
-		// Token: 0x04000DCC RID: 3532
+		// Token: 0x0400082B RID: 2091
 		Shirley,
-		// Token: 0x04000DCD RID: 3533
+		// Token: 0x0400082C RID: 2092
 		Shaun,
-		// Token: 0x04000DCE RID: 3534
+		// Token: 0x0400082D RID: 2093
 		Timmy
 	}
 }
