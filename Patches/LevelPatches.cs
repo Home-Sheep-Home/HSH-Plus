@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 
-namespace HSHPlus
+namespace HSHPlus.Patches
 {
     internal class LevelPatches
     {

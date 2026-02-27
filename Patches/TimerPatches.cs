@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HSHPlus
+namespace HSHPlus.Patches
 {
     internal class TimerPatches
     {
@@ -26,7 +26,7 @@ namespace HSHPlus
             if (stringIndex > -1)
             {
                 codes[stringIndex].operand = "{0:D2}:{1:D2}.{2:D3}";
-                codes[stringIndex + 7] = CodeInstruction.Call(typeof(String), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
+                codes[stringIndex + 7] = CodeInstruction.Call(typeof(string), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
                 codes.InsertRange(stringIndex + 7, codes.GetRange(stringIndex + 1, 3));
                 codes[stringIndex + 8] = CodeInstruction.Call(typeof(TimeSpan), "get_Milliseconds");
             }
@@ -52,7 +52,7 @@ namespace HSHPlus
             if (stringIndex > -1)
             {
                 codes[stringIndex].operand = "{0:D2}:{1:D2}.{2:D3}";
-                codes[stringIndex + 7] = CodeInstruction.Call(typeof(String), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
+                codes[stringIndex + 7] = CodeInstruction.Call(typeof(string), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
                 codes.InsertRange(stringIndex + 7, codes.GetRange(stringIndex + 1, 3));
                 codes[stringIndex + 8] = CodeInstruction.Call(typeof(TimeSpan), "get_Milliseconds");
             }
@@ -78,7 +78,7 @@ namespace HSHPlus
             if (stringIndex > -1)
             {
                 codes[stringIndex].operand = "{0:D2}:{1:D2}.{2:D3}";
-                codes[stringIndex + 7] = CodeInstruction.Call(typeof(String), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
+                codes[stringIndex + 7] = CodeInstruction.Call(typeof(string), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
                 codes.InsertRange(stringIndex + 7, codes.GetRange(stringIndex + 1, 3));
                 codes[stringIndex + 8] = CodeInstruction.Call(typeof(TimeSpan), "get_Milliseconds");
             }
@@ -104,7 +104,7 @@ namespace HSHPlus
             if (stringIndex > -1)
             {
                 codes[stringIndex].operand = "{0:D2}:{1:D2}.{2:D3}";
-                codes[stringIndex + 7] = CodeInstruction.Call(typeof(String), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
+                codes[stringIndex + 7] = CodeInstruction.Call(typeof(string), "Format", [typeof(string), typeof(object), typeof(object), typeof(object)]);
                 codes.InsertRange(stringIndex + 7, codes.GetRange(stringIndex + 1, 3));
                 codes[stringIndex + 8] = CodeInstruction.Call(typeof(TimeSpan), "get_Milliseconds");
             }
