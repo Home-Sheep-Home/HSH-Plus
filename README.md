@@ -9,6 +9,15 @@ Makes Home Sheep Home a lot better
 * Adds milliseconds to your best time on level panels
 
 ## Installation
+### BepInEx (Recommended)
+BepInEx is a mod loader for Unity games that allows you to load multiple mod DLLs at once. This method allows you to use multiple mods without having to edit the original source code.
+
+Download: https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5
+
+NOTE: Make sure to download the win_x86 for any version of the game from v1.0.4 and before.
+
+Once downloaded, extract the `.zip` file and place all the contents of the extracted folder into the same location as the game's `.exe` file (Should be `Home Sheep Home Farmageddon Party Edition.exe`). Run the game to generate the files, then put `HSHPlus.dll` into `<GAME_PATH>\BepInEx\plugins`.
+
 ### Download Assembly-CSharp file
 Put the Assembly-CSharp file in `C:\Program Files (x86)\Steam\steamapps\common\HSH Farmageddon\Home Sheep Home Farmageddon Party Edition_Data\Managed` or where ever Home Sheep Home is stored
 
