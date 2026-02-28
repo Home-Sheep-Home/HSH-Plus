@@ -58,5 +58,16 @@ namespace HSHPlus.Patches
         {
             return AddMilliseconds(instructions);
         }
+
+        [HarmonyPatch(typeof(StoryLevelSelectPanel), "SetupPanel")]
+        [HarmonyPostfix]
+        static void SetupPanel_Postfix(StoryLevelSelectPanel __instance)
+        {
+            if (!__instance.bestTimeTitleText.IsActive() && !__instance.bestTimeText.IsActive())
+            {
+                __instance.bestTimeTitleText.gameObject.SetActive(true);
+                __instance.bestTimeText.gameObject.SetActive(true);
+            }
+        }
     }
 }
