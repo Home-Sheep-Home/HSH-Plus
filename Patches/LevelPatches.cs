@@ -9,7 +9,7 @@ namespace HSHPlus.Patches
 
         [HarmonyPatch(typeof(Level), "Update")]
         [HarmonyPostfix]
-        static void Level_Postfix()
+        static void Level_Update_Postfix()
         {
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R))
             {
@@ -19,7 +19,7 @@ namespace HSHPlus.Patches
 
         [HarmonyPatch(typeof(SheepManager), "Update")]
         [HarmonyPostfix]
-        static void SheepManager_Postfix(SheepManager __instance)
+        static void SheepManager_Update_Postfix(SheepManager __instance)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
